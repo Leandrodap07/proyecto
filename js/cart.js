@@ -77,4 +77,12 @@ function revisarMensajeVacio() {
   const productos = JSON.parse(localStorage.getItem("box"));
   carritoVacioElement.classList.toggle("escondido", productos);
   totalesContainer.classList.toggle("escondido", !productos);
-}
+};
+/** Finalizar compra */
+  document.getElementById('comprar').onclick = function(){
+  Swal.fire('Operacion finalizada con éxito, Gracias por su Compra!')}
+
+  document.getElementById("comprar").addEventListener("click", () => {
+  contenedorTarjetas.innerHTML = "";
+  reiniciarCarrito();
+  revisarMensajeVacio()});
